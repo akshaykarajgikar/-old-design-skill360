@@ -1,0 +1,241 @@
+:root {
+  --color1: black;
+  --color2: white;
+  --background-color1: white;
+  --background-color2: black;
+  --background-color3: #444444;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* outline: solid 1px red !important; */
+}
+
+/* Navigation bar */
+.nav {
+  width: 80px;
+  height: 100vh;
+  position: fixed;
+  color: var(--color2);
+  background-color: var(--background-color2);
+  transition: width 300ms ease;
+  overflow-x: hidden;
+}
+/* Navigation bar when navbar extended */
+.nav-extended {
+  width: 200px;
+}
+
+/* Navbar style */
+.nav ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.nav ul li a {
+  color: var(--color2);
+  background-color: var(--background-color2);
+  text-decoration: none;
+  font-size: 18px;
+  padding: 20px 24px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav ul li a:hover,
+.nav ul li a:active {
+  color: var(--color1);
+  background-color: var(--background-color1);
+}
+
+.nav ul li a.active {
+  color: var(--color2);
+  background-color: var(--background-color3);
+}
+
+.nav ul li a .title {
+  display: none;
+}
+
+.nav.nav-extended ul li a .title {
+  display: inline-block;
+}
+
+.nav ul li a .icon,
+.nav ul li a .profile .profile-img {
+  margin-right: 15px;
+  font-size: 28px;
+  transition: font-size 300ms ease;
+}
+
+.nav .profile {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.nav .profile-info span {
+  font-size: 14px;
+}
+.nav .profile-info .profile-name,
+.nav .profile-info .profile-username {
+  display: block;
+}
+
+.nav.nav-extended ul li a .profile-img {
+  font-size: 48px;
+}
+.nav.nav-extended ul li a .profile-username {
+  font-style: italic;
+}
+
+/* Main Page Area */
+.wrapper {
+  position: absolute;
+  width: calc(
+    100vw - 110px
+  ); /*110px figure took by adding 30px extra because of unusal behaviour of bootstrap */
+  left: 80px;
+  color: var(--color1);
+  background-color: var(--background-color1);
+  transition: width 300ms ease, left 300ms ease;
+}
+/* Main Page area when navbar extended */
+.wrapper__nav-extended {
+  width: calc(
+    100vw - 230px
+  ); /*230px figure took by adding 30px extra because of unusal behaviour of bootstrap */
+  left: 200px;
+}
+
+/* Margin after every div of profile info and page2 */
+.wrapper .profile-data > div,
+.wrapper > div > div {
+  margin: 20px 0;
+}
+
+/* Main Page Profile view styles */
+.wrapper .profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.2rem;
+  padding: 10px 0;
+}
+
+.wrapper .profile-name,
+.wrapper .profile-username-header,
+.wrapper .profile-username-data,
+.wrapper .profile-rating {
+  padding: 5px 0;
+}
+
+.wrapper .profile-username- {
+  display: inline-block;
+}
+.wrapper .profile-name,
+.wrapper .profile-username-header {
+  font-weight: bolder;
+}
+.wrapper .profile-username-data {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+/* Controls on right side of Main page area */
+.wrapper .controls {
+  position: absolute;
+  right: 0;
+  padding: 30px;
+  font-size: 2rem;
+}
+.wrapper .controls i {
+  padding-right: 20px;
+}
+
+/* Controls on right side of Main page area */
+@media all and (max-width: 600px) {
+  .wrapper .controls {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+  }
+  .wrapper .controls i {
+    padding-bottom: 10px;
+  }
+}
+
+/* Profile data */
+.wrapper .profile-data .profile-data-header {
+  font-weight: bolder;
+  white-space: nowrap;
+  text-align: end;
+}
+
+@media all and (max-width: 999px) {
+  .wrapper .profile-data .profile-data-header {
+    font-weight: bolder;
+    white-space: nowrap;
+    text-align: initial;
+  }
+}
+
+/* Profile data CERTIFICATE BOXES*/
+.wrapper .profile-data .profile-data-info .certificate-box {
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 130px;
+  max-height: 130px;
+  border-radius: 10px;
+  margin: 2px;
+}
+.wrapper .profile-data .profile-data-info .see-all .icon,
+.wrapper .profile-data .profile-data-info .see-all .icon__info {
+  display: block;
+}
+.wrapper .profile-data .profile-data-info .see-all .icon {
+  font-size: 2.5rem;
+}
+.wrapper .profile-data .profile-data-info .see-all {
+  align-self: center;
+}
+
+/* Posts style */
+.wrapper .profile-data .profile-data-info .post-box {
+  min-width: 135px;
+  max-width: 135px;
+  min-height: 130px;
+  max-height: 130px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+/****************************** PAGE 2 Styles ******************************/
+.wrapper .route {
+  font-size: 1.8rem;
+  padding: 10px 20px;
+}
+.wrapper .route .icon {
+  padding-right: 20px;
+}
+.wrapper .route .route-info {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.comments-header {
+  text-transform: uppercase;
+  text-align: end;
+}
+.wrapper ol li .icon {
+  font-size: 1.8rem;
+  padding-top: 25px;
+}
