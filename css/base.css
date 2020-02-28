@@ -117,7 +117,7 @@
 }
 
 /* Margin after every div of profile info and page2 */
-.wrapper .profile-data > div,
+.wrapper .profile-data > div > div,
 .wrapper > div > div {
   margin: 20px 0;
 }
@@ -231,11 +231,21 @@
   text-transform: uppercase;
   font-weight: bold;
 }
-.comments-header {
+.wrapper .comments-header {
   text-transform: uppercase;
   text-align: end;
+  font-weight: bold;
+  display: block;
 }
-.wrapper ol li .icon {
-  font-size: 1.8rem;
-  padding-top: 25px;
+
+.wrapper .single-comment-info {
+  padding-left: 2.2rem;
+}
+
+.wrapper ol li .icon i {
+  font-size: 2rem;
+}
+
+.wrapper .icon .fa-heart {
+  text-align: end;
 }
